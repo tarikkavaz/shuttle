@@ -1,0 +1,28 @@
+{
+  "name": "santralistanbul",
+  "version": "1.0.0",
+  "description": "shuttle app",
+  "main": "main.js",
+  "license": "MIT",
+  "author": {
+    "name": "santralistanbul",
+    "email": "webteam@bilgi.edu.tr"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.4.2",
+    "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-rpm": "^6.4.2",
+    "@electron-forge/maker-squirrel": "^6.4.2",
+    "@electron-forge/maker-zip": "^6.4.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
+    "electron": "^27.0.2"
+  },
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "DEBUG='electron-forge:*' electron-forge make"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  }
+}
