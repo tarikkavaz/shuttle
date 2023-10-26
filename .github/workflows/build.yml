@@ -15,19 +15,13 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Install dependencies for Dolapdere
         run: cd dolapdere && yarn install
 
       - name: Build Dolapdere
         run: cd dolapdere && yarn make
-      
-      - name: List output directories
-        run: |
-          Get-ChildItem -Path dolapdere\out -Recurse
-          Get-ChildItem -Path dolapdere\out\my-app-64 -Recurse
-          Get-ChildItem -Path dolapdere\out\installer64 -Recurse
 
       - name: Upload Dolapdere .exe as artifact
         uses: actions/upload-artifact@v2
@@ -46,7 +40,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Install dependencies for santralistanbul
         run: cd santralistanbul && yarn install
@@ -71,7 +65,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Install dependencies for kustepe
         run: cd kustepe && yarn install
