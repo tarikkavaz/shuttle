@@ -1,4 +1,4 @@
-name: Build Multiple Electron Apps
+name: Build Shuttle Apps
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: dolapdere-exe
-          path: dolapdere/out/*.exe
+          path: dolapdere/out/dolapdere.exe
   
   build-santralistanbul:
     runs-on: windows-latest
@@ -50,7 +50,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: santralistanbul-exe
-          path: santralistanbul/out/*.exe
+          path: santralistanbul/out/santralistanbul.exe
   
   build-kustepe:
     runs-on: windows-latest
@@ -73,4 +73,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: kustepe-exe
-          path: kustepe/out/*.exe
+          path: kustepe/out/kustepe.exe
