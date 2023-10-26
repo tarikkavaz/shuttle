@@ -1,4 +1,4 @@
-name: Build Electron App
+name: Build Multiple Electron Apps
 
 on:
   push:
@@ -6,26 +6,71 @@ on:
       - master
 
 jobs:
-  build:
+  build-dolapdere:
     runs-on: windows-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Install Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-    - name: Install dependencies
-      run: yarn install
+      - name: Install dependencies for Dolapdere
+        run: cd dolapdere && yarn install
 
-    - name: Build Electron App
-      run: yarn make
+      - name: Build Dolapdere
+        run: cd dolapdere && yarn make
 
-    - name: Upload .exe as artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: santralistanbul
-        path: out/santralistanbul.exe
+      - name: Upload Dolapdere .exe as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dolapdere-exe
+          path: dolapdere/out/*.exe
+  
+  build-santralistanbul:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies for santralistanbul
+        run: cd santralistanbul && yarn install
+
+      - name: Build santralistanbul
+        run: cd santralistanbul && yarn make
+
+      - name: Upload santralistanbul .exe as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: santralistanbul-exe
+          path: santralistanbul/out/*.exe
+  
+  build-kustepe:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies for kustepe
+        run: cd kustepe && yarn install
+
+      - name: Build kustepe
+        run: cd kustepe && yarn make
+
+      - name: Upload kustepe .exe as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: kustepe-exe
+          path: kustepe/out/*.exe
