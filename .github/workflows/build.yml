@@ -33,7 +33,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: dolapdere-exe
-          path: dolapdere/out/dolapdere.exe
+          path: |
+            dolapdere/out/dolapdere-win32-x64/dolapdere.exe
+            dolapdere/out/make/squirrel.windows/x64/dolapdere-1.0.0\ Setup.exe
   
   build-santralistanbul:
     runs-on: windows-latest
@@ -52,11 +54,13 @@ jobs:
       - name: Build santralistanbul
         run: cd santralistanbul && yarn make
 
-      - name: Upload santralistanbul .exe as artifact
+      - name: Upload Santralistanbul .exe as artifact
         uses: actions/upload-artifact@v2
         with:
           name: santralistanbul-exe
-          path: santralistanbul/out/santralistanbul.exe
+          path: |
+            santralistanbul/out/santralistanbul-win32-x64/santralistanbul.exe
+            santralistanbul/out/make/squirrel.windows/x64/santralistanbul-1.0.0\ Setup.exe
   
   build-kustepe:
     runs-on: windows-latest
@@ -75,8 +79,10 @@ jobs:
       - name: Build kustepe
         run: cd kustepe && yarn make
 
-      - name: Upload kustepe .exe as artifact
+      - name: Upload Kustepe .exe as artifact
         uses: actions/upload-artifact@v2
         with:
           name: kustepe-exe
-          path: kustepe/out/kustepe.exe
+          path: |
+            kustepe/out/kustepe-win32-x64/kustepe.exe
+            kustepe/out/make/squirrel.windows/x64/kustepe-1.0.0\ Setup.exe
