@@ -22,6 +22,12 @@ jobs:
 
       - name: Build Dolapdere
         run: cd dolapdere && yarn make
+      
+      - name: List output directories
+        run: |
+          dir /s dolapdere\out
+          dir /s dolapdere\out\my-app-64
+          dir /s dolapdere\out\installer64
 
       - name: Upload Dolapdere .exe as artifact
         uses: actions/upload-artifact@v2
