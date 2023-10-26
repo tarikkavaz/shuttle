@@ -11,8 +11,8 @@ module.exports = {
         certificatePassword: process.env.CERTIFICATE_PASSWORD,
         appDirectory: 'santralistanbul/out/my-app-64',
         outputDirectory: 'santralistanbul/out/installer64',
-        authors: 'My App Inc.',
-        exe: 'myapp.exe'
+        authors: 'Bilgi Webteam',
+        exe: 'santralistanbul.exe'
       },
     },
     {
